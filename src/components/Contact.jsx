@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, FormGroup } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
 export const Contact = () => {
@@ -49,9 +49,11 @@ export const Contact = () => {
                     })}
                 />
                 {errors.message && errors.message.message}
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
+                <FormGroup>
+                    <Button variant="primary" type="submit" className="mt-3">
+                        Submit
+                    </Button>
+                </FormGroup>
             </Form>
         </>
     );
