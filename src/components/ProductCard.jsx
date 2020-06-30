@@ -5,6 +5,8 @@ export const ProductCard = (props) => {
     const cardStyle = {
         minWidth: "300px",
         marginBottom: "2%" /* (100-32*3)/2 */,
+        backgroundColor: "transparent",
+        textAlign: "center",
     };
 
     return (
@@ -13,9 +15,9 @@ export const ProductCard = (props) => {
             <Card.Body>
                 <Card.Title>{props.product.title}</Card.Title>
                 <Card.Text>{props.product.description}</Card.Text>
-                <Card.Footer className="text-muted">
+                <Card.Text className="text-muted">
                     {props.product.price} SEK
-                </Card.Footer>
+                </Card.Text>
             </Card.Body>
         </Card>
     );

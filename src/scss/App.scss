@@ -1,6 +1,16 @@
 // Variables
 $primary: #a4a4a4;
-$dark: #000000 !default;
+$dark: #000000;
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$navbar-dark-color: #ffffff;
+
+@font-face {
+    font-family: "coolvetica";
+    src: local("coolvetica"),
+        url("../assets/fonts/coolvetica/coolvetica-rg.ttf") format("truetype");
+}
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "style.scss";
