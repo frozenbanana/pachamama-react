@@ -8,34 +8,40 @@ export const NavigationBar = (props) => {
         backgroundColor: "black",
         color: "white",
     };
+    console.log(props.title);
 
-    return (
-        <Navbar
-            style={navbarStyle}
-            collapseOnSelect
-            expand="lg"
-            bg="dark"
-            variant="dark"
-        >
-            {props.noBrand ? (
-                ""
-            ) : (
-                <Link to="/">
-                    <Navbar.Brand>{props.title}</Navbar.Brand>
-                </Link>
-            )}
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto">
-                    {props.links
-                        ? props.links.map((lk, index) => (
-                              <Nav.Link key={index} as={Link} to={lk.url}>
-                                  {lk.name}
-                              </Nav.Link>
-                          ))
-                        : ""}
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-    );
+    let content = <p>Loading...</p>;
+    if (props.links) {
+        content = (
+            <>
+                <h1>{props.title}</h1>
+                <Navbar
+                    style={navbarStyle}
+                    collapseOnSelect
+                    expand="lg"
+                    bg="dark"
+                    variant="dark"
+                >
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="mx-auto">
+                            {props.links
+                                ? props.links.map((lk, index) => (
+                                      <Nav.Link
+                                          key={index}
+                                          as={Link}
+                                          to={lk.url}
+                                      >
+                                          {lk.name}
+                                      </Nav.Link>
+                                  ))
+                                : ""}
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+            </>
+        );
+    }
+
+    return content;
 };
