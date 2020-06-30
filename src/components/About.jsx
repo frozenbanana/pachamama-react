@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Image } from "react-bootstrap";
-import aboutImg from "../assets/about-img.jpg";
+import aboutImg from "../assets/images/about-img.jpg";
 export const About = (props) => {
     // Declare a new state variable, which we'll call "count"  const [count, setCount] = useState(0);
     return (
